@@ -8,10 +8,14 @@ body {
 }
 
 .body {
-  background-image: url("../img/background.jpg");
-  background-size: contain;
+  background: url("../img/background.jpg") no-repeat center fixed;
+  background-size: cover;
 }
 
+
+h1 {
+	color: black;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -58,6 +62,18 @@ li {
 	list-style-type: none;
 	text-align: left;
 }
+
+.article {
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 10px;
+	background-color: white;
+	opacity: 0.9;
+	color: black;
+	z-index: -1;
+	min-height: 500px;
+}
+
 /* Featurettes
 ------------------------- */
 
@@ -69,7 +85,6 @@ li {
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
-  letter-spacing: -1px;
 }
 
 
@@ -89,8 +104,3 @@ li {
   }
 }
 
-@media (min-width: 992px) {
-  .featurette-heading {
-    margin-top: 120px;
-  }
-}
