@@ -37,7 +37,7 @@ body {
 }
 
 
-/* MARKETING CONTENT
+/* COLUMNS CONTENT
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
@@ -54,7 +54,10 @@ body {
   margin-left: 10px;
 }
 
-
+li {
+	list-style-type: none;
+	text-align: left;
+}
 /* Featurettes
 ------------------------- */
 
