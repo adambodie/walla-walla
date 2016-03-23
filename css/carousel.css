@@ -16,6 +16,27 @@ body {
 h1 {
 	color: black;
 }
+
+#overlay {
+  z-index: 9999;
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+}
+
+#overlay img {
+  vertical-align: middle;
+}
+
+#overlay h3 {
+  color: white;
+}
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -33,8 +54,8 @@ h1 {
   height: 500px;
   background-color: #777;
 }
-.carousel-inner > .item > img {
-  height: 500px;
+.carousel-inner > .item > a > img {
+  height: 400px;
   display: block;
   margin-left: auto;
   margin-right: auto;
