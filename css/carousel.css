@@ -33,8 +33,22 @@ h1 {
   vertical-align: middle;
 }
 
-#overlay h3 {
-  color: white;
+
+/* CUSTOMIZE THE JUMBOTRON
+-------------------------------------------------- */
+.jumbotron {
+	margin-bottom: 0px;
+	font-family: 'Black Ops One', cursive;
+	color: black;
+	padding: 0;
+}
+
+.jumbotron p {
+	font-size: 1em;
+}
+
+.jumbotron h1 {
+	font-size: 2em;
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -47,15 +61,23 @@ h1 {
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 10;
+  width: 100%;
+  position: relative;
+  right: 0;
+  left: 0;
 }
 
+.carousel-caption h1 {
+	width: 100%;
+}
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
   background-color: #777;
 }
+
 .carousel-inner > .item > a > img {
-  height: 400px;
+  max-height: 400px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -87,12 +109,15 @@ li {
 .article {
 	border: 1px solid black;
 	border-radius: 20px;
-	padding: 10px;
+	padding: 30px;
 	background-color: white;
 	opacity: 0.9;
 	color: black;
 	z-index: -1;
-	min-height: 500px;
+}
+
+.tile {
+	min-height: 600px;
 }
 
 /* Featurettes
@@ -123,5 +148,20 @@ li {
   .featurette-heading {
     font-size: 50px;
   }
+  
+.jumbotron {
+	margin-bottom: 0px;
+	font-family: 'Black Ops One', cursive;
+	color: black;
+}
+
+.jumbotron p {
+	font-size: 1.5em;
+}
+
+.jumbotron h1 {
+	font-size: 48px;
+}  
+  
 }
 
