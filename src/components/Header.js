@@ -18,7 +18,7 @@ export default function Header(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-        <Typography component="h1" variant="h4" color="white" align="center" noWrap className={classes.title} >
+        <Typography component="h1" variant="h4" color="inherit" align="center" noWrap className={classes.title} >
           Adam's Wonderful Wild Weekend in Walla Walla Washington
         </Typography>
         <Typography component="p" color="inherit" className={classes.title}>

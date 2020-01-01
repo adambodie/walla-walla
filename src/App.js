@@ -1,8 +1,10 @@
 import React from 'react'
 import Header from './components/Header'
+import Carousel from './components/Carousel'
+import Columns from './components/Columns'
+import Footer from './components/Footer'
 import { Helmet } from 'react-helmet'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Typography from '@material-ui/core/Typography'
+import { CssBaseline } from '@material-ui/core/'
 
 const App = () => (
 	<div className="App">
@@ -14,9 +16,9 @@ const App = () => (
         </Helmet>
         <CssBaseline />
 		<Header />
-		<div className="background">
-			<Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh', opacity: '0.1' }} />
-		</div>
+		<Carousel />
+		<Columns />
+		<Footer/>
 	</div>
 )
 export default App
