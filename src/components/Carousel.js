@@ -45,7 +45,7 @@ export default class Carousel extends Component {
 	render() {
 		const { open } = this.state
 		return (
-			<div style={{ position: 'relative', width: '100%', height: 700 }}>
+			<div style={{ position: 'relative', width: '100%'}}>
 			<Tooltip title="View Photos" placement="top">
 				<Button style={{padding: '0'}} onClick={() => this.onStart()}>
 					<img src='/img/walla-walla-banner.jpg' style={{width: '100%'}} alt='banner'/>
@@ -59,17 +59,17 @@ export default class Carousel extends Component {
 					style={{ position: 'absolute' }}
 				>
 					<StyledSlide
-					  media={<img src='/img/palouse.jpg' alt='text' className='slide-image'/>}
+					  media={<img src='/img/palouse.jpg' alt='text'/>}
 					  title='Palouse Falls'
 					  subtitle='Palouse Falls State Park, Washington'
 					/>
 					 <StyledSlide
-					  media={<img src='/img/upper-palouse.jpg' alt='text' className='slide-image'/>}
+					  media={<img src='/img/upper-palouse.jpg' alt='text'/>}
 					  title='Upper Palouse Falls'
 					  subtitle='Palouse Falls State Park, Washington'
 					/>
 					 <StyledSlide
-					  media={<img src='/img/palouse-river.jpg' alt='text' className='slide-image'/>}
+					  media={<img src='/img/palouse-river.jpg' alt='text'/>}
 					  title='Palouse River'
 					  subtitle='Palouse Falls State Park, Washington'
 					/>
