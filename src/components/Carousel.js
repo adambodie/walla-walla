@@ -2,38 +2,20 @@ import React, { Component } from 'react'
 import { AutoRotatingCarousel, Slide } from 'material-auto-rotating-carousel'
 import { Button, Tooltip } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
+import { connect } from 'react-redux'
 
-const styles = {
-	root: {
-		backgroundColor: 'gray',
-		padding: 0
-	},
-	media: {
-		backgroundColor: 'black'
-	},
-	title: {
-		marginBottom: 0,
-	},
-	mediaBackground: {
-		height: 'calc(100% - 90px)',
-	},
-	text: {
-		paddingTop: 12
+const mapStateToProps = state => {
+	return {
+		photos: state.photos,
+		carouselStyles: state.carouselStyles
 	}
 }
 
-const StyledSlide = withStyles(styles)(Slide)
-
-export default class Carousel extends Component {
+class Carousel extends Component {
 	constructor(){
 		super()
 		this.state = { 
-			open: false,
-			data: [
-				{'image': 'palouse', 'title': 'Palouse Falls', 'subtitle': 'Palouse Falls State Park, Washington'},
-				{'image': 'upper-palouse', 'title': 'Upper Palouse Falls', 'subtitle': 'Palouse Falls State Park, Washington'},
-				{'image': 'palouse-river', 'title': 'Palouse River', 'subtitle': 'Palouse Falls State Park, Washington'},
-			]
+			open: false
 		}
 		this.onStart = this.onStart.bind(this)
 		this.onClose = this.onClose.bind(this)
@@ -48,7 +30,9 @@ export default class Carousel extends Component {
 	}
 	
 	render() {
-		const { open, data } = this.state
+		const { open } = this.state
+		const { photos, carouselStyles } = this.props
+		const StyledSlide = withStyles(carouselStyles)(Slide)
 		return (
 			<div style={{ position: 'relative', width: '100%'}}>
 				<Tooltip title="View Photos" placement="top">
@@ -57,7 +41,7 @@ export default class Carousel extends Component {
 					</Button>
 				</Tooltip>
 				<AutoRotatingCarousel open={open} onClose={() => this.onClose()} onStart={() => this.onStart()} >
-					{data.map((x, index) => (
+					{photos.map((x, index) => (
 						<StyledSlide
 							key={index}
 							media={<img src={`/img/${x.image}.jpg`} alt={x.title}/>}
@@ -71,3 +55,4 @@ export default class Carousel extends Component {
 	)
 }}
 
+export default connect(mapStateToProps)(Carousel)
