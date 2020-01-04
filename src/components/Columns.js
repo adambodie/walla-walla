@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import { Paper, Grid, Container, Button, Typography, Avatar } from '@material-ui/core/'
+import Article from './Article'
+import { Paper, Grid, Container, Button, Typography, Avatar } from '@material-ui/core'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
@@ -49,22 +50,15 @@ function Columns(props) {
 					</Grid>
 				</Grid>
 			</Container>
-			<Container maxWidth="lg">
-				<Grid container spacing={3} className={classes.grid}>
-					<Grid item xs={12} md={7}>
-						<Paper className={classes.paper}>
-						<div className={classes.paperTop}>
-							<Typography variant="h2" align="left"><strong>Going Cluckers for Wingman Birdz n Brewz.</strong></Typography>
-							<Typography  variant="h2" align="left" color="textSecondary">A restaurant review</Typography>
-						</div>
-							<ReactMarkdown source={props.markdown[3]} />
-						</Paper>
-					</Grid>
-					<Grid item xs={12} md={5}>
-						<img src='/img/wingman.jpg' alt='text'/>
-					</Grid>
-				</Grid>
-			</Container>
+			<Article 
+				classes={classes} 
+				title={'Going Cluckers for Wingman Birdz n Brewz.'} 
+				subtitle={'A restaurant review'} 
+				markdown={props.markdown[3]} 
+				image={'wingman'}
+				height={'600px'} 
+				alt={'Wingman Birdz n Brewz'} 
+			/>
 			<Container maxWidth="lg">
 				<Grid container spacing={3} className={classes.grid}>
 					<Grid item xs={12} md={6}>
@@ -81,23 +75,15 @@ function Columns(props) {
 					</Grid>
 				</Grid>
 			</Container>
-			<Container maxWidth="lg">
-				<Grid container spacing={3} className={classes.grid}>
-					<Grid item xs={12} md={7}>
-						<Paper className={classes.paper}>
-						<div className={classes.paperTop}>
-							<Typography variant="h2" align="left"><strong>Boardman, Oregon</strong></Typography>
-							<Typography  variant="h2" align="left" color="textSecondary">Not a place to visit Twice</Typography>
-						</div>
-						<ReactMarkdown source={props.markdown[5]} />
-						<p></p>
-						</Paper>
-					</Grid>
-					<Grid item xs={12} md={5}>
-						<img className={classes.img} src='/img/boardman3.jpg' alt='text'/>
-					</Grid>
-				</Grid>
-			</Container>		
+			<Article 
+				classes={classes} 
+				title={'Boardman, Oregon'} 
+				subtitle={'Not a place to visit Twice'} 
+				markdown={props.markdown[5]} 
+				image={'boardman3'}
+				height={'400px'} 
+				alt={'Boardman'} 
+			/>	
 		</div>
   );
 }

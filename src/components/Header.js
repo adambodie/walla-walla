@@ -12,7 +12,7 @@ function Header(props) {
 	const classes = props.headerStyles()
 	return (
 		<div className={classes.root}>
-			<Typography component="h1" variant="h3" color="inherit" align="center" noWrap className={classes.title} >
+			<Typography component="h1" variant="h3" color="inherit" align="center" className={classes.title} >
 				Adam's Wonderful Wild Weekend in Walla Walla Washington
 			</Typography>
 			<Typography component="p" color="inherit" className={classes.title}>
