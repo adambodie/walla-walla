@@ -1,25 +1,22 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import { connect } from 'react-redux'
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    background: '#EEEEEE'
-  },	
-  title: {
-    flex: 1,
-    padding: '10px',
-  }
-}));
-
-export default function Footer(props) {
-  const classes = useStyles();
-  return (
-    <div className={classes.root}>
-        <Typography component="h4" variant="h6" color="primary" align="left" noWrap className={classes.title} >
-          © 2016 Adam Bodie, Inc.
-        </Typography>
-    </div>
-  );
+const mapStateToProps = state => {
+	return {
+		footerStyles: state.footerStyles
+	}
 }
+
+function Footer(props) {
+	const classes = props.footerStyles()
+	return (
+		<div className={classes.root}>
+			<Typography component="h4" variant="h6" color="textPrimary" align="left" noWrap className={classes.title} >
+				© {new Date().getFullYear()} Adam Bodie, Inc.
+			</Typography>
+		</div>
+	)
+}
+
+export default connect(mapStateToProps)(Footer)
