@@ -3,11 +3,14 @@ export const WHITMAN = 'After dinner, I walked around downtown to see some night
 export const HOTPOOP = 'A music store located in Walla Walla, Hot Poop obviously stands out for its funny name. I walked inside just to check it out, but the store was cluttered and felt too much like a maze. I saw some Hot Poop shirts, but nothing I really liked. Otherwise, I didn\'t see anything to my liking. After a couple of minutes of not seeing anything, I walked out. But hey, I did check out Hot Poop. At least it\'s not cold.'
 
 export const LOCATION = `
-* **Portland:** 211 miles
-* **Seattle:** 217 miles
-* **Spokane:** 119 miles
-* **Boise:** 198 miles
-* **Washington D.C.:** 2075 miles
+**Portland:** 211 miles  
+**Seattle:** 217 miles  
+**Spokane:** 119 miles  
+**Boise:** 198 miles  
+**Salt Lake City** 590 miles  
+**Fort Collins:** 1000 miles  
+**San Clemente**: 1089 miles  
+**Washington D.C.:** 2075 miles    
 `
 
 export const WINGS = `

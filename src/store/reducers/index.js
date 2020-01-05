@@ -1,12 +1,13 @@
 import { combineReducers } from 'redux'
 import { OPEN, CLOSE } from '../constants'
-import { SLIDE_STYLES, CAROUSEL_STYLES, HEADER_STYLES, FOOTER_STYLES, COLUMN_STYLES } from '../constants/styles'
+import { SLIDE_STYLES, CAROUSEL_STYLES, HEADER_STYLES, FOOTER_STYLES, COLUMN_STYLES, CAROUSEL_TRANSITION_STYLES } from '../constants/styles'
 import { ALL_MARKDOWN } from '../constants/markdown'
 import { PHOTOS } from '../constants/data'
 
 export const photos = (state = PHOTOS) => state
 export const markdown = (state = ALL_MARKDOWN) => state
 export const carouselStyles = (state = CAROUSEL_STYLES) => state
+export const carouselTransitionStyles = (state = CAROUSEL_TRANSITION_STYLES) => state
 export const slideStyles = (state = SLIDE_STYLES) => state
 export const headerStyles = (state = HEADER_STYLES) => state
 export const columnStyles = (state = COLUMN_STYLES) => state
@@ -33,6 +34,7 @@ export const rootReducer = combineReducers({
 	markdown,
 	isOpen,
 	carouselStyles,
+	carouselTransitionStyles,
 	headerStyles,
 	columnStyles,
 	footerStyles,

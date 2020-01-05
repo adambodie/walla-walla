@@ -7,10 +7,8 @@ const Article = ({classes, title, subtitle, markdown, image, height, alt}) => (
 		<Grid container spacing={3} className={classes.grid}>
 			<Grid item xs={12} md={7}>
 				<Paper className={classes.paper}>
-					<div className={classes.paperTop}>
-						<Typography variant="h2" align="left"><strong>{title}</strong></Typography>
-						<Typography  variant="h2" align="left" color="textSecondary">{subtitle}</Typography>
-					</div>
+					<Typography variant="h2" align="left"><strong>{title}</strong></Typography>
+					<Typography  variant="h3" align="left" color="textSecondary">{subtitle}</Typography>
 					<ReactMarkdown source={markdown} />
 				</Paper>
 			</Grid>

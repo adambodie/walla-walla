@@ -16,7 +16,7 @@ function Header(props) {
 				Adam's Wonderful Wild Weekend in Walla Walla Washington
 			</Typography>
 			<Typography component="p" color="inherit" className={classes.title}>
-				With a full time job at Seterus and the ability to take PTO, I took my first day off on Friday March 18th. Looking for action, I headed east to Walla Walla, Washington. Here's my trip to Walla Walla...
+				With a full time job at Seterus and the ability to take PTO, I took my first day off on Friday March 18th, 2016. Looking for action, I headed east to Walla Walla, Washington. Here's my trip to Walla Walla...
 			</Typography>
 		</div>
 	)

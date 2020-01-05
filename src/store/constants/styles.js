@@ -63,8 +63,8 @@ export const COLUMN_STYLES = makeStyles(theme => ({
 		flexDirection: 'column',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		textAlign: 'center',
-		minHeight: '575px',
+		textAlign: 'left',
+		minHeight: '520px',
 		opacity: 0.8,
 		borderRadius: '5%',
 		border: '1px solid black'
@@ -80,9 +80,51 @@ export const COLUMN_STYLES = makeStyles(theme => ({
 	large: {
 		width: theme.spacing(20),
 		height: theme.spacing(20),
-	},
-	list: {
-		textAlign: 'left',
-		listStyle: 'none'
 	}
 }))
+
+
+export const CAROUSEL_TRANSITION_STYLES = makeStyles({
+	view: {
+		width: '100%',
+		float: 'left',
+		overflow: 'hidden',
+		position: 'relative',
+		cursor: 'default',
+		'& h1': {
+			textTransform: 'uppercase',
+			position: 'relative',
+			padding: '10px',
+			color: 'white'
+		},
+		'& .mask': {
+			width: '100%',
+			position: 'absolute',
+			overflow: 'hidden'
+		}
+	},
+	viewTransition: {
+		'& img': {
+			transition: 'all 0.2s linear',
+		},
+		'&:hover img': { 
+			transform: 'scale(1.1)'
+		},
+		'& .mask': {
+			opacity: '0',
+			transition: 'all 0.4s ease-in-out'
+		},
+		'& h1': {
+			transform: 'translateY(-100px)',
+			opacity: '0',
+			transition: 'all 0.2s ease-in-out'
+		},
+		'&:hover .mask': { 
+			opacity: '1'
+		},
+		'&:hover h1': {
+			opacity: '1',
+			transform: 'translateY(0px)'
+		} 
+	}
+})
