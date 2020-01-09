@@ -1,2 +1,4 @@
-export const OPEN = 'OPEN'
-export const CLOSE = 'CLOSE'
+export const OPEN_CAROUSEL = 'OPEN_CAROUSEL'
+export const CLOSE_CAROUSEL = 'CLOSE_CAROUSEL'
+export const OPEN_MODAL = 'OPEN_MODAL'
+export const CLOSE_MODAL = 'CLOSE_MODAL'

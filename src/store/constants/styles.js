@@ -1,5 +1,22 @@
 import { makeStyles } from '@material-ui/core/styles'
 
+
+export const DIALOG_STYLES = makeStyles({
+	root: {
+		background: 'url(/background.jpg) no-repeat center fixed',
+		backgroundSize: 'cover',
+		display: 'flex',
+		justifyContent: 'center',
+	},
+	image: {
+		maxHeight: '450px'
+	},
+	title: {
+		display: 'flex',
+		justifyContent: 'space-between',
+	}
+})
+
 export const SLIDE_STYLES = {
 	root: {
 		backgroundColor: 'gray',
@@ -22,10 +39,14 @@ export const SLIDE_STYLES = {
 export const CAROUSEL_STYLES = {
 	dots: {
 		display: 'none'
+	},
+	content: {
+		width: '90%',
+		maxHeight: '350px'
 	}	
 }
 
-export const HEADER_STYLES = makeStyles(theme => ({
+export const HEADER_STYLES = makeStyles({
 	root: {
 		width: '100%',
 		background: '#EEEEEE'
@@ -35,9 +56,9 @@ export const HEADER_STYLES = makeStyles(theme => ({
 		padding: '20px',
 		fontWeight: 'bold'
 	}
-}));
+});
 
-export const FOOTER_STYLES = makeStyles(theme => ({
+export const FOOTER_STYLES = makeStyles({
 	root: {
 		width: '100%',
 		background: '#EEEEEE'
@@ -46,7 +67,7 @@ export const FOOTER_STYLES = makeStyles(theme => ({
 		flex: 1,
 		padding: '10px',
 	}
-}));
+});
 
 export const COLUMN_STYLES = makeStyles(theme => ({
 	root: {
@@ -61,8 +82,6 @@ export const COLUMN_STYLES = makeStyles(theme => ({
 		padding: theme.spacing(3),
 		display: 'flex',
 		flexDirection: 'column',
-		justifyContent: 'space-between',
-		alignItems: 'center',
 		textAlign: 'left',
 		minHeight: '520px',
 		opacity: 0.8,

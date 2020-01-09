@@ -11,14 +11,14 @@ const mapStateToProps = state => {
 		carouselStyles: state.carouselStyles,
 		carouselTransitionStyles: state.carouselTransitionStyles,
 		slideStyles: state.slideStyles,
-		isOpen: state.isOpen
+		isCarouselOpen: state.isCarouselOpen
 	}
 }
 const mapDispatchToProps = { openCarousel, closeCarousel }
 
 
 function Carousel(props) {
-	const { isOpen, photos, carouselStyles, slideStyles, openCarousel, closeCarousel } = props
+	const { isCarouselOpen, photos, carouselStyles, slideStyles, openCarousel, closeCarousel } = props
 	const classes = props.carouselTransitionStyles()
 	const StyledCarousel = withStyles(carouselStyles)(AutoRotatingCarousel)
 	const StyledSlide = withStyles(slideStyles)(Slide)
@@ -31,7 +31,7 @@ function Carousel(props) {
 						<h1>View Photo Gallery</h1>
 					</div>
 				</Button>
-			<StyledCarousel open={isOpen} onClose={closeCarousel} onStart={openCarousel} >
+			<StyledCarousel open={isCarouselOpen} onClose={closeCarousel} onStart={openCarousel} >
 				{photos.map((x, index) => (
 					<StyledSlide
 						key={index}
