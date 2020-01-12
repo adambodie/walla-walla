@@ -31,7 +31,7 @@ function Carousel(props) {
 						<h1>View Photo Gallery</h1>
 					</div>
 				</Button>
-			<StyledCarousel open={isCarouselOpen} onClose={closeCarousel} onStart={openCarousel} >
+			<StyledCarousel mobile open={isCarouselOpen} onClose={closeCarousel} onStart={openCarousel} >
 				{photos.map((x, index) => (
 					<StyledSlide
 						key={index}

@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 
-export const DIALOG_STYLES = makeStyles({
+export const DIALOG_STYLES = makeStyles(theme =>({
 	root: {
 		background: 'url(/background.jpg) no-repeat center fixed',
 		backgroundSize: 'cover',
@@ -9,13 +9,20 @@ export const DIALOG_STYLES = makeStyles({
 		justifyContent: 'center',
 	},
 	image: {
-		maxHeight: '450px'
+		maxHeight: '450px',
+		[theme.breakpoints.down('sm')]: {
+			maxHeight: '300px',
+		},
 	},
 	title: {
 		display: 'flex',
 		justifyContent: 'space-between',
+	},
+	markdown: {
+		color: 'white',
+		padding: '20px'
 	}
-})
+}))
 
 export const SLIDE_STYLES = {
 	root: {
@@ -29,22 +36,26 @@ export const SLIDE_STYLES = {
 		marginBottom: 0,
 	},
 	mediaBackground: {
-		height: 'calc(100% - 90px)'
+		height: 'calc(100% - 80px)'
 	},
 	text: {
 		paddingTop: 12
 	},
 }
 
-export const CAROUSEL_STYLES = {
+export const CAROUSEL_STYLES = (theme =>({
 	dots: {
 		display: 'none'
 	},
 	content: {
-		width: '90%',
-		maxHeight: '350px'
+		width: '95%',
+		maxHeight: '95%',
+		display: 'block',
+		margin: '0 auto',
+		marginTop: '1%'
+
 	}	
-}
+}))
 
 export const HEADER_STYLES = makeStyles({
 	root: {
@@ -56,7 +67,7 @@ export const HEADER_STYLES = makeStyles({
 		padding: '20px',
 		fontWeight: 'bold'
 	}
-});
+})
 
 export const FOOTER_STYLES = makeStyles({
 	root: {
@@ -78,15 +89,29 @@ export const COLUMN_STYLES = makeStyles(theme => ({
 		marginBottom: '30px',
 		borderBottom: '1px solid white'
 	},
+	title: {
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '2rem',
+		},
+	},
+	subtitle: {
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '1.25rem',
+		},
+	},
 	paper: {
 		padding: theme.spacing(3),
 		display: 'flex',
 		flexDirection: 'column',
+		justifyContent: 'space-between',
 		textAlign: 'left',
-		minHeight: '520px',
+		minHeight: '470px',
 		opacity: 0.8,
-		borderRadius: '5%',
-		border: '1px solid black'
+		borderRadius: '3%',
+		border: '1px solid black',
+		[theme.breakpoints.down('sm')]: {
+			borderRadius: '1%',
+		},
 	},
 	paperTop: {
 		display: 'flex',
@@ -97,8 +122,10 @@ export const COLUMN_STYLES = makeStyles(theme => ({
 		maxHeight: '400px'
 	},
 	large: {
-		width: theme.spacing(20),
-		height: theme.spacing(20),
+		width: theme.spacing(30),
+		height: theme.spacing(30),
+		boxShadow: '2px 2px 4px black',
+		marginBottom: '10px'
 	}
 }))
 

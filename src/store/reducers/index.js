@@ -29,21 +29,24 @@ export function isCarouselOpen(state = initialState, action) {
 	}
 }
 
-export let miniArticleState = {
-	miniArticles: [
-	{ title: 'The Anatomy of a 5 Minute Picture', image: 'whitman', alt: 'Marcus Whitman',isModalOpen: false},
-	{ title: 'How far are you from Walla Walla?', image: 'marcus-whitman',alt: 'Marcus Whitman Conference Center', isModalOpen: false},
-	{ title: 'Hot Poop!', image: 'hot-poop', alt: 'Hot Poop', isModalOpen: false}
+export let articleState = {
+	articles: [
+	{ title: 'The Anatomy of a 5 Minute Picture', subtitle: 'How Time Stands Still on the Phone', image: 'whitman', alt: 'Marcus Whitman',isModalOpen: false},
+	{ title: 'How far are you from Walla Walla?', subtitle: 'Find Out for Yourself', image: 'marcus-whitman',alt: 'Marcus Whitman Conference Center', isModalOpen: false},
+	{ title: 'Hot Poop!', subtitle: 'What is it and Why is it in Walla Walla', image: 'hot-poop', alt: 'Hot Poop', isModalOpen: false},
+	{ title: 'Going Cluckers for Wingman Birdz n Brewz', subtitle: 'A restaurant review', image: 'wingman', alt: 'Wingman', isModalOpen: false},
+	{ title: 'I Apologize for Nothing', subtitle: 'Get the Lowdown on the Palouse', image: 'palouse', alt: 'Palouse', isModalOpen: false},
+	{ title: 'Boardman, Oregon', subtitle: 'Not a Place to Visit Twice', image: 'boardman3', alt: 'Boardman', isModalOpen: false},
 ]
 }
 
-export function isModalOpen(state = miniArticleState, action) {
+export function isModalOpen(state = articleState, action) {
 	switch (action.type) {
 		case OPEN_MODAL:
-			state.miniArticles[action.payload.id].isModalOpen = true
+			state.articles[action.payload.id].isModalOpen = true
 			return Object.assign({}, state, {})
 		case CLOSE_MODAL:
-			state.miniArticles[action.payload.id].isModalOpen = false
+			state.articles[action.payload.id].isModalOpen = false
 			return Object.assign({}, state, {})
 		default:
 			return state

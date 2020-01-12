@@ -3,9 +3,7 @@ import Typography from '@material-ui/core/Typography'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
-	return {
-		headerStyles: state.headerStyles
-	}
+	return { headerStyles: state.headerStyles }
 }
 
 function Header(props) {

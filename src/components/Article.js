@@ -1,24 +1,41 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import { Paper, Grid, Container, Typography } from '@material-ui/core'
+import DialogDescription from './DialogDescription'
+import { Avatar, Paper, Grid, Button, Dialog, DialogTitle, Icon, Typography } from '@material-ui/core'
+import { connect } from 'react-redux'
+import { openModal, closeModal } from '../store/actions'
+import CancelIcon from '@material-ui/icons/Cancel'
 
-const Article = ({classes, title, subtitle, markdown, image, alt, direction}) => (
-	<Container maxWidth="lg">
-		<Grid container spacing={3} className={classes.grid} direction={direction}>
-			<Grid item md={7}>
-				<Paper className={classes.paper}>
-					<div>
-						<Typography variant="h2" align="left"><strong>{title}</strong></Typography>
-						<Typography  variant="h3" align="left" color="textSecondary">{subtitle}</Typography>
-					</div>
-					<ReactMarkdown source={markdown} />
-				</Paper>
-			</Grid>
-			<Grid item md={5}>
-				<img style={{width: '100%'}} src={`/img/${image}.jpg`} alt={alt}/>
-			</Grid>
+
+const mapStateToProps = state => {
+	return { dialogStyles: state.dialogStyles }
+}
+
+const mapDispatchToProps = { openModal, closeModal }
+
+function Article(props) {
+	const { classes, title, subtitle, markdown, image, alt, isModalOpen, openModal, closeModal, index } = props
+	const dialogClasses = props.dialogStyles()
+	return (
+		<Grid item xs={12} md={4}>
+			<Paper className={classes.paper}>
+				<div className={classes.paperTop}>
+					<Avatar src={`/img/${image}.jpg`} alt={alt} className={classes.large}/>	
+					<Typography variant="h5" align="center" className={classes.title}><strong>{title}</strong></Typography>
+					<Typography  variant="h6" align="center" color="textSecondary" className={classes.subtitle}>{subtitle}</Typography>
+				</div>
+				<Button variant="contained" color="primary" onClick={()=>openModal(index)}>Click to View</Button>
+			</Paper>
+			<Dialog fullScreen open={isModalOpen} onClose={closeModal}>
+				<div className={dialogClasses.title}>
+					<DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+					<Button onClick={()=>closeModal(index)} color="primary">
+						<Icon><CancelIcon/></Icon>
+					</Button>
+				</div>
+				<DialogDescription dialogClasses={dialogClasses} image={image} alt={alt} markdown={markdown} />
+			</Dialog>
 		</Grid>
-	</Container>		
-)
+	)
+}
 
-export default Article
+export default connect(mapStateToProps, mapDispatchToProps)(Article)

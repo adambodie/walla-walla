@@ -3,9 +3,7 @@ import Typography from '@material-ui/core/Typography'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
-	return {
-		footerStyles: state.footerStyles
-	}
+	return { footerStyles: state.footerStyles }
 }
 
 function Footer(props) {
